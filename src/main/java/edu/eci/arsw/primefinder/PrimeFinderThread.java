@@ -21,7 +21,6 @@ public class PrimeFinderThread extends Thread {
     @Override
     public void run() {
         for (int i = a; i < b; i++) {
-            // Verificación de pausa
             synchronized (lock) {
                 while (paused) {
                     try {
