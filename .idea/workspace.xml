@@ -4,40 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75df1bfb-6e67-426e-b574-7cef944b7da2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RESPUESTAS.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/img/sshot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/snakeraceoutput.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/main/java/enums/Direction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/main/java/enums/GridSize.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/main/java/snakepackage/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/main/java/snakepackage/Cell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/main/java/snakepackage/Snake.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/main/java/snakepackage/SnakeApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/main/resources/Img/firewall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/main/resources/Img/lightning.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/main/resources/Img/mouse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/main/resources/Img/up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/test/java/edu/eci/arsw/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/arsw/primefinder/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/arsw/primefinder/Control.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/arsw/primefinder/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/arsw/primefinder/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/arsw/primefinder/PrimeFinderThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/arsw/primefinder/PrimeFinderThread.java" afterDir="false" />
-    </list>
+    <list default="true" id="75df1bfb-6e67-426e-b574-7cef944b7da2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Origin" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
@@ -53,7 +31,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Origin",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
