@@ -3,12 +3,13 @@ package edu.eci.arsw.primefinder;
 import java.util.LinkedList;
 import java.util.List;
 
-public class PrimeFinderThread extends Thread {
-    int a, b;
-    private List<Integer> primes;
+public class PrimeFinderThread extends Thread{
+
+    int a,b;
+
+    private final List<Integer> primes;
     private final Object lock;
     private boolean paused;
-
     public PrimeFinderThread(int a, int b, Object lock) {
         super();
         this.lock = lock;
@@ -39,16 +40,15 @@ public class PrimeFinderThread extends Thread {
         }
     }
 
-    public void pauseThread() {
-        synchronized (lock) {
+    public void resumeThread() {
+        synchronized (lock){
             paused = true;
         }
     }
 
-    public void resumeThread() {
-        synchronized (lock) {
-            paused = false;
-            lock.notify();
+    public void pauseThread() {
+        synchronized (lock){
+            paused = true;
         }
     }
 
@@ -73,5 +73,3 @@ public class PrimeFinderThread extends Thread {
         return primes;
     }
 }
-
-
