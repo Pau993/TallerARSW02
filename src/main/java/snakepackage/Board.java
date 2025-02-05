@@ -225,4 +225,21 @@ public class Board extends JLabel implements Observer {
 	public void update(Observable arg0, Object arg1) {
 		repaint();
 	}
+
+	public static synchronized Cell getCell(int x, int y) {
+		return gameboard[x][y];
+	}
+
+	public synchronized void updateCell(int x, int y, Cell newCell) {
+		gameboard[x][y] = newCell;
+	}
+
+	public static synchronized void consumeFood(int index) {
+		food[index].setFood(false);
+		food[index] = new Cell(-1, -1);
+	}
+
+	public static synchronized void updateFoodPosition(int index, Cell newCell) {
+		food[index] = newCell;
+	}
 }
