@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08193a8f-9be6-44d0-9b08-bfbe951ca1da" name="Changes" comment="" />
+    <list default="true" id="08193a8f-9be6-44d0-9b08-bfbe951ca1da" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RESPUESTAS.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/snakeraceoutput.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/enums/Direction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/enums/GridSize.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snakepackage/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snakepackage/Cell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snakepackage/Snake.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/snakepackage/SnakeApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Img/firewall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Img/lightning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Img/mouse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Img/up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/eci/arsw/AppTest.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +38,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2sbXmlUMc5eU7u1vFrQa81uoZCM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,15 +51,17 @@
     "Application.SnakeApp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "snake",
+    "git-widget-placeholder": "Origin",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/felip/TallerARSW02"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="SnakeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="23" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="snakepackage.SnakeApp" />
-      <module name="Snake-race-thread" />
+      <module name="PrimeFinder" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="snakepackage.*" />
