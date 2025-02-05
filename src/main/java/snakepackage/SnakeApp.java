@@ -1,11 +1,11 @@
-package snake.src.main.java.snakepackage;
+package snakepackage;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import snake.src.main.java.enums.GridSize;
+import enums.GridSize;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.logging.Level;

@@ -1,4 +1,4 @@
-package snake.src.main.java.enums;
+package enums;
 
 public class GridSize {
 

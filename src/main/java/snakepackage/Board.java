@@ -1,4 +1,4 @@
-package snake.src.main.java.snakepackage;
+package snakepackage;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -12,7 +12,7 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 
-import snake.src.main.java.enums.GridSize;
+import enums.GridSize;
 import java.io.InputStream;
 
 public class Board extends JLabel implements Observer {

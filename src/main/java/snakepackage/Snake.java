@@ -1,11 +1,11 @@
-package snake.src.main.java.snakepackage;
+package snakepackage;
 
 import java.util.LinkedList;
 import java.util.Observable;
 import java.util.Random;
 
-import snake.src.main.java.enums.Direction;
-import snake.src.main.java.enums.GridSize;
+import enums.Direction;
+import enums.GridSize;
 
 public class Snake extends Observable implements Runnable {
 

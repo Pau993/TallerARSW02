@@ -1,4 +1,4 @@
-package snake.src.main.java.snakepackage;
+package snakepackage;
 
 /**
  * Classe Cell

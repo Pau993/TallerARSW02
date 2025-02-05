@@ -1,4 +1,4 @@
-package snake.src.test.java.edu.eci.arsw;
+package edu.eci.arsw;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
