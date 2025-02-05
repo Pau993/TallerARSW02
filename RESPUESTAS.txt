@@ -39,7 +39,9 @@ Solución: se cambia para que sea una lista sincronizada., tambien sobre snakeBo
        }
    }
    ```
-   
+Solución:
+Se elimina usando un CountDownLatch, con esto se hace coordinación en la finalizacion de los hilos, declarandolo para esperar a que todas las serpientes terminen y se modifica en constructor de Snake.
+
    Problemas:
    - El ciclo verifica constantemente el estado de las serpientes sin pausas.
    - No libera el tiempo de procesamiento para otros hilos.
