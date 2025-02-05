@@ -14,13 +14,13 @@ Análisis
 
    a. Posibles condiciones de carrera:
    - Acceso no sincronizado a `Board.gameboard` cuando múltiples serpientes verifican la misma celda.
+Solución: Para este se añaden metodos sincronizados para acceder y modificar 'gameboard'.
    - Modificación concurrente de los arrays compartidos (`food[]`, `barriers[]`, `jump_pads[]`, `turbo_boosts[]`).
-   - Actualización no atómica de la posición de la comida cuando una serpiente la consume.
+Solución: Se sincroniza el acceso a los arrays compartidos como lo es 'food[]', 'barriers[]', `jump_pads[]`, `turbo_boosts[]`.
 
    b. Uso inadecuado de colecciones y manejo concurrente:
    - `LinkedList snakeBody` en `Snake.java` no es thread-safe.
-   - Arrays estáticos en `Board` (`food[]`, `barriers[]`, etc.) sin sincronización adecuada.
-   - Acceso concurrente a las colecciones sin mecanismos de protección.
+Solución: se cambia para que sea una lista sincronizada., tambien sobre snakeBody.
 
    c. Uso innecesario de esperas activas:
    
