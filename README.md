@@ -20,32 +20,6 @@ con un enfoque en la simulación de movimiento autónomo y la interacción con d
 Esta aplicación implementa la generación de números primos, contando cuántos números primos se crean en un período de 5 segundos. 
 Utiliza hilos para optimizar el proceso y completa la implementación de la funcionalidad.
 
-## Diagrama de Arquitectura
-
-* Usuario (User):
-
-Es quien realiza solicitudes HTTP a través de un navegador web.
-* Navegador (Browser):
-
-Actúa como intermediario entre el usuario y el servidor HTTP.
-Realiza solicitudes HTTP al servidor en busca de recursos como archivos HTML, JavaScript, CSS o imágenes.
-* Servidor HTTP (HttpServer):
-
-Es el servidor que recibe y procesa las solicitudes HTTP enviadas por el navegador.
-Se encuentra dentro de un "grupo genérico", lo que indica que puede formar parte de una infraestructura más amplia.
-
-El navegador envía varias solicitudes HTTP al servidor en el puerto 35000 para diferentes rutas:
-
-* /script.js: Solicitud para obtener un archivo de JavaScript.
-* /index.html: Solicitud para cargar el archivo principal de la página web.
-* /estilos.css: Solicitud para cargar el archivo de estilos CSS.
-* /Imagen/Chill.jpg: Solicitud para obtener una imagen ubicada en una ruta específica.
-
-El servidor procesa estas solicitudes y responde con los recursos correspondientes desde su sistema de archivos.
-
-![image](https://github.com/user-attachments/assets/01c7ee8a-a10d-44e3-875e-97118c608545)
-
-
 ## Comenzando 🚀
 
 Las siguientes instrucciones le permitirán obtener una copia del proyecto en funcionamiento.
