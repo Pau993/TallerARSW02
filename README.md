@@ -45,12 +45,6 @@ El servidor procesa estas solicitudes y responde con los recursos correspondient
 
 ![image](https://github.com/user-attachments/assets/01c7ee8a-a10d-44e3-875e-97118c608545)
 
-## Diagrama de Clase
-
-Este diagrama describe la estructura básica y las responsabilidades principales de la clase HttpServer, que está diseñada para manejar solicitudes HTTP y servir archivos estáticos.
-
-![image](https://github.com/user-attachments/assets/caace3d5-a3de-44fa-9875-e34adebdba24)
-
 
 ## Comenzando 🚀
 
