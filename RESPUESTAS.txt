@@ -1,0 +1,32 @@
+Análisis
+
+1. Análisis del Código
+
+Comenzamos con la implementación de la interfaz Runneable, lo que permite que cada instancia de Snake se ejecute en su propio hilo, esto ayuda para crear un comportamiento autónomo para multiples serpientes. Es decir se utiliza para implementar la concurrencia, que varias ejecuten al mismo tiempo.
+
+   Se analizó el código para comprender cómo hace uso de hilos para crear un comportamiento autónomo de las N serpientes.
+   - Para cada serpiente, cada hilo opera de forma independiente, tomando sus propias decisiones de movimiento con su propia velocidad.
+   - Cada serpiente detecta sus propias colisiones y se mueve sin coordinación con otras serpientes.
+   - Las serpientes interactúan con el tablero notificando los cambios.
+   - Se observa el paralelismo debido a múltiples serpientes moviéndose simultáneamente.
+   - Existe independencia por la operación individual de cada serpiente.
+   - El acceso compartido al tablero introduce problemas de concurrencia.
+
+2. Identificación de Problemas de Concurrencia
+
+   a. Posibles condiciones de carrera:
+   - Acceso no sincronizado a `Board.gameboard` cuando múltiples serpientes verifican la misma celda.
+Solución: Para este se añaden metodos sincronizados para acceder y modificar 'gameboard'.
+   - Modificación concurrente de los arrays compartidos (`food[]`, `barriers[]`, `jump_pads[]`, `turbo_boosts[]`).
+Solución: Se sincroniza el acceso a los arrays compartidos como lo es 'food[]', 'barriers[]', `jump_pads[]`, `turbo_boosts[]`.
+
+1. Sincronización para evitar condiciones de carrera
+Las condiciones de carrera pueden ocurrir cuando múltiples hilos acceden y modifican las mismas variables compartidas sin la debida sincronización. En este caso, debemos sincronizar el acceso a las colecciones y variables compartidas.
+
+2. Evitar esperas activas
+En lugar de usar Thread.sleep(), podemos usar mecanismos de sincronización como wait() y notify() para evitar esperas activas.
+
+Explicación punto 3
+
+Sincronización de isPaused, hasTurbo y a la lista de snakeBody dentro métodos snakeCalc y checkIfOwnBody.
+Estas soluciones aseguran que las regiones críticas estén protegidas contra condiciones de carrera, sincronizando estrictamente lo necesario.
