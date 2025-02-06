@@ -3,32 +3,30 @@ package snakepackage;
 import java.util.LinkedList;
 import java.util.Observable;
 import java.util.Random;
-
 import enums.Direction;
 import enums.GridSize;
 
 public class Snake extends Observable implements Runnable {
 
-    private boolean paused = false;
     private int idt;
     private Cell head;
     private Cell newCell;
     private LinkedList<Cell> snakeBody = new LinkedList<Cell>();
     //private Cell objective = null;
     private Cell start = null;
-
     private boolean snakeEnd = false;
-
     private int direction = Direction.NO_DIRECTION;
     private final int INIT_SIZE = 3;
-
     private boolean hasTurbo = false;
     private int jumps = 0;
     private boolean isSelected = false;
     private int growing = 0;
     public boolean goal = false;
-    private final Object startLock = new Object();
+    private boolean isPaused = false;
 
+    /*
+     * Constructor for the Snake class.
+     */
     public Snake(int idt, Cell head, int direction) {
         this.idt = idt;
         this.direction = direction;
@@ -36,10 +34,18 @@ public class Snake extends Observable implements Runnable {
 
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @return
+     */
     public boolean isSnakeEnd() {
         return snakeEnd;
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @param head
+     */
     private void generateSnake(Cell head) {
         start = head;
         //Board.gameboard[head.getX()][head.getY()].reserveCell(jumps, idt);
@@ -47,29 +53,29 @@ public class Snake extends Observable implements Runnable {
         growing = INIT_SIZE - 1;
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     */
     @Override
     public void run() {
-        
         while (!snakeEnd) {
             synchronized (this) {
-                while (paused) {
+                while (isPaused) {
                     try {
                         wait();
                     } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
-                        return;
+                        e.printStackTrace();
                     }
-
                 }
             }
+
             snakeCalc();
 
-            //NOTIFY CHANGES TO GUI
             setChanged();
             notifyObservers();
 
             try {
-                if (hasTurbo == true) {
+                if (hasTurbo) {
                     Thread.sleep(500 / 3);
                 } else {
                     Thread.sleep(500);
@@ -77,26 +83,28 @@ public class Snake extends Observable implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
         }
-        
+
         fixDirection(head);
-        
-        
     }
 
-    /*
-     * Snake movement and collision detection
+    public synchronized void pause() {
+        isPaused = true;
+    }
+
+    public synchronized void resume() {
+        isPaused = false;
+        notify();
+    }
+
+    /**
+     *  This method is used to get the direction of the snake.
      */
     private void snakeCalc() {
         head = snakeBody.peekFirst();
-
         newCell = head;
-
         newCell = changeDirection(newCell);
-        
         randomMovement(newCell);
-
         checkIfFood(newCell);
         checkIfJumpPad(newCell);
         checkIfTurboBoost(newCell);
@@ -114,6 +122,10 @@ public class Snake extends Observable implements Runnable {
 
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @param newCell
+     */
     private void checkIfBarrier(Cell newCell) {
         if (Board.gameboard[newCell.getX()][newCell.getY()].isBarrier()) {
             // crash
@@ -123,7 +135,11 @@ public class Snake extends Observable implements Runnable {
         }
     }
 
-    
+    /**
+     * This method is used to get the direction of the snake.
+     * @param newCell
+     * @return
+     */
     private Cell fixDirection(Cell newCell) {
 
         // revert movement
@@ -143,6 +159,11 @@ public class Snake extends Observable implements Runnable {
         return newCell;
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @param newCell
+     * @return
+     */
     private boolean checkIfOwnBody(Cell newCell) {
         for (Cell c : snakeBody) {
             if (newCell.getX() == c.getX() && newCell.getY() == c.getY()) {
@@ -153,6 +174,10 @@ public class Snake extends Observable implements Runnable {
 
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @param newCell
+     */
     private void randomMovement(Cell newCell) {
         Random random = new Random();
         int tmp = random.nextInt(4) + 1;
@@ -167,6 +192,10 @@ public class Snake extends Observable implements Runnable {
         }
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @param newCell
+     */
     private void checkIfTurboBoost(Cell newCell) {
         if (Board.gameboard[newCell.getX()][newCell.getY()].isTurbo_boost()) {
             // get turbo_boost
@@ -183,6 +212,9 @@ public class Snake extends Observable implements Runnable {
         }
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     */
     private void checkIfJumpPad(Cell newCell) {
 
         if (Board.gameboard[newCell.getX()][newCell.getY()].isJump_pad()) {
@@ -200,6 +232,10 @@ public class Snake extends Observable implements Runnable {
         }
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @param newCell
+     */
     private void checkIfFood(Cell newCell) {
         Random random = new Random();
 
@@ -230,6 +266,11 @@ public class Snake extends Observable implements Runnable {
 
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @param newCell
+     * @return
+     */
     private Cell changeDirection(Cell newCell) {
         // Avoid out of bounds
 
@@ -289,6 +330,10 @@ public class Snake extends Observable implements Runnable {
         return newCell;
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @param newCell
+     */
     public void searchObjective(Cell objective) {
 
         Random random = new Random();
@@ -343,31 +388,36 @@ public class Snake extends Observable implements Runnable {
         this.objective = c;
     }*/
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @return
+     */
     public LinkedList<Cell> getBody() {
         return this.snakeBody;
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @return
+     */
     public boolean isSelected() {
         return isSelected;
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @param isSelected
+     */
     public void setSelected(boolean isSelected) {
         this.isSelected = isSelected;
     }
 
+    /**
+     * This method is used to get the direction of the snake.
+     * @return
+     */
     public int getIdt() {
         return idt;
     }
-
-    public synchronized void pause(){
-        paused = true;
-    }
-
-    public synchronized void resume(){
-        paused = false;
-        notifyAll();
-    }
-
-    
 
 }
