@@ -61,7 +61,7 @@ Realice los siguientes pasos para clonar el proyecto en su máquina local.
 ```
 git clone https://github.com/Pau993/TallerARSW02.git
 cd TallerARSW02
-git checkout TallerARSW02
+git checkout main
 mvn clean compile
 ```
 
