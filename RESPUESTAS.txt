@@ -1,7 +1,9 @@
 Análisis
 
 1. Análisis del Código
-   
+
+Comenzamos con la implementación de la interfaz Runneable, lo que permite que cada instancia de Snake se ejecute en su propio hilo, esto ayuda para crear un comportamiento autónomo para multiples serpientes. Es decir se utiliza para implementar la concurrencia, que varias ejecuten al mismo tiempo.
+
    Se analizó el código para comprender cómo hace uso de hilos para crear un comportamiento autónomo de las N serpientes.
    - Para cada serpiente, cada hilo opera de forma independiente, tomando sus propias decisiones de movimiento con su propia velocidad.
    - Cada serpiente detecta sus propias colisiones y se mueve sin coordinación con otras serpientes.
@@ -18,31 +20,13 @@ Solución: Para este se añaden metodos sincronizados para acceder y modificar '
    - Modificación concurrente de los arrays compartidos (`food[]`, `barriers[]`, `jump_pads[]`, `turbo_boosts[]`).
 Solución: Se sincroniza el acceso a los arrays compartidos como lo es 'food[]', 'barriers[]', `jump_pads[]`, `turbo_boosts[]`.
 
-   b. Uso inadecuado de colecciones y manejo concurrente:
-   - `LinkedList snakeBody` en `Snake.java` no es thread-safe.
-Solución: se cambia para que sea una lista sincronizada., tambien sobre snakeBody.
+1. Sincronización para evitar condiciones de carrera
+Las condiciones de carrera pueden ocurrir cuando múltiples hilos acceden y modifican las mismas variables compartidas sin la debida sincronización. En este caso, debemos sincronizar el acceso a las colecciones y variables compartidas.
 
-   c. Uso innecesario de esperas activas:
-   
-   En `SnakeApp.java`, el siguiente fragmento de código representa una espera activa (busy-waiting):
-   
-   ```java
-   while (true) {
-       int x = 0;
-       for (int i = 0; i != MAX_THREADS; i++) {
-           if (snakes[i].isSnakeEnd() == true) {
-               x++;
-           }
-       }
-       if (x == MAX_THREADS) {
-           break;
-       }
-   }
-   ```
-Solución:
-Se elimina usando un CountDownLatch, con esto se hace coordinación en la finalizacion de los hilos, declarandolo para esperar a que todas las serpientes terminen y se modifica en constructor de Snake.
+2. Evitar esperas activas
+En lugar de usar Thread.sleep(), podemos usar mecanismos de sincronización como wait() y notify() para evitar esperas activas.
 
-   Problemas:
-   - El ciclo verifica constantemente el estado de las serpientes sin pausas.
-   - No libera el tiempo de procesamiento para otros hilos.
-   - Se recomienda el uso de mecanismos de sincronización adecuados, como `wait()` y `notifyAll()` para evitar la espera activa.
+Explicación punto 3
+
+Sincronización de isPaused, hasTurbo y a la lista de snakeBody dentro métodos snakeCalc y checkIfOwnBody.
+Estas soluciones aseguran que las regiones críticas estén protegidas contra condiciones de carrera, sincronizando estrictamente lo necesario.
