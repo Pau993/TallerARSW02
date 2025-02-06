@@ -68,6 +68,7 @@ mvn clean compile
 ### Ejecutando la aplicación ⚙️
 
 Para abrir los archivos y ejecutarlo siga la siguiente instrucción.
+Dentro de main encontrará el archivo con el programa de primos y dentro de la rama Snake encontrará el programa del juego de la serpiendte
 
 https://github.com/user-attachments/assets/40c25085-cff8-4962-96df-861f5230b95c
 
